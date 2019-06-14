@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello world!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mV-Gc-Mr9">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello world!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mV-Gc-Mr9">
                                 <rect key="frame" x="162" y="437.5" width="90.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -52,19 +52,29 @@
                                     <constraint firstItem="dIJ-Qm-4ri" firstAttribute="top" secondItem="SKy-jH-Uhm" secondAttribute="top" id="hbG-D7-2ob"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip7-nb-cNu">
+                                <rect key="frame" x="335" y="357.5" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RAB-J1-Uti"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ip7-nb-cNu" secondAttribute="trailing" constant="40" id="1t2-cw-bvl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SKy-jH-Uhm" secondAttribute="trailing" constant="40" id="5c5-ug-WiZ"/>
                             <constraint firstItem="5mV-Gc-Mr9" firstAttribute="top" secondItem="SKy-jH-Uhm" secondAttribute="bottom" constant="100" id="CQS-oe-tyv"/>
                             <constraint firstItem="5mV-Gc-Mr9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XLh-9I-cSe"/>
                             <constraint firstItem="SKy-jH-Uhm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Xoz-GO-RMI"/>
                             <constraint firstItem="5mV-Gc-Mr9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Z84-3k-wG7"/>
+                            <constraint firstItem="Ip7-nb-cNu" firstAttribute="top" secondItem="SKy-jH-Uhm" secondAttribute="bottom" constant="20" id="gfK-v0-Lj2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="areaView" destination="SKy-jH-Uhm" id="bd2-8R-c6N"/>
+                        <outlet property="reset" destination="Ip7-nb-cNu" id="XQJ-go-hhX"/>
                         <outlet property="text" destination="5mV-Gc-Mr9" id="rSL-vQ-XK4"/>
                         <outlet property="toSlider" destination="dIJ-Qm-4ri" id="4OK-Zg-PQX"/>
                     </connections>

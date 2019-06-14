@@ -12,15 +12,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var areaView: UIView!
     @IBOutlet weak var toSlider: UILabel!
     @IBOutlet weak var text: UILabel!
+    @IBOutlet weak var reset: UIButton!
     
     private let trailingView:CGFloat = 40, leadingView:CGFloat = 40 // Trailing and Leading of Autolayout
-    private let widthScreen = UIScreen.main.bounds.width
+    private let widthScreen = UIScreen.main.bounds.width            // Width of the screen of device
     private var initX:CGFloat = 0.0, limitX:CGFloat = 0.0, widthInitToSlider:CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        widthInitToSlider = toSlider.frame.width
+        widthInitToSlider = toSlider.frame.width                    // Width of ouw UILabel
     }
 
     @IBAction func handleOnTouch(_ sender: UIPanGestureRecognizer) {
@@ -46,19 +47,70 @@ class ViewController: UIViewController {
             }
         }
         else if sender.state == .ended {
-            // What message show?
+            // What animation to do?
             if toSlide.center.x == initX {
-                text.text = "Hello World"
+                collapseButton()
             }
             else if toSlide.center.x == limitX {
-                text.text = "Welcome"
+                self.expandedButton()
             }
             else{
-                text.text = "Continue sliding"
+                self.moveButtonBack()
             }
         }
         sender.setTranslation(CGPoint.zero, in: toSlider)
     }
     
+    @IBAction func resetButtonAction(_ sender: UIButton) {
+        self.text.isHidden = true
+        self.reset.isEnabled = false
+        self.toSlider.isUserInteractionEnabled = true
+        self.toSlider.text = "Slide"
+        collapseButton()
+    }
+    
+    // MARK: Custom Functions
+    private func expandedButton(){
+        // Animation
+        UIView.animate(withDuration: 2.0, animations: {
+            // What to do?
+            // Update the width of our UILabel
+            self.toSlider.frame.size.width = self.areaView.frame.width
+            // Update the position of our UILabel
+            self.toSlider.center.x = self.areaView.center.x - self.leadingView
+        }) { (completion) in
+            // What to do end?
+            // Change Text
+            self.toSlider.text = "Welcome"
+            // Cancel the User Interaction Enabled for avoid move the UILabel
+            self.toSlider.isUserInteractionEnabled = false
+            // Show message
+            self.text.isHidden = false
+            // Activate Button
+            self.reset.isEnabled = true
+        }
+    }
+    
+    private func moveButtonBack(){
+        // Animation
+        UIView.animate(withDuration: 2.0, animations: {
+            // Update the position of our UILabel
+            self.toSlider.center.x = self.initX
+            self.toSlider.text = "Ops!"
+        }) { (completion) in
+            self.toSlider.text = "Slide"
+        }
+    }
+    
+    private func collapseButton(){
+        // Animation
+        UIView.animate(withDuration: 1.0) {
+            // What to do?
+            // Update the width of our UILabel
+            self.toSlider.frame.size.width = self.widthInitToSlider
+            // Update the position of our UILabel
+            self.toSlider.center.x = self.initX
+        }
+    }
 }
 
