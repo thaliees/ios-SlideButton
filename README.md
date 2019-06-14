@@ -15,3 +15,7 @@ Creación de tres animaciones para el botón deslizante:
 [expandButton]: Cuando el botón llega hasta el final del área, el botón toma el tamaño del área.
 [moveButtonBack]: Cuando el botón no llega hasta el final del área, el botón regresa hasta su posición inicial.
 [collapseButton]: Cuando el botón está del tamaño del área, se podrá regresar a su tamaño original.
+
+## Style
+Ahora, un ImageView se comportará como el botón deslizante (*Activar User Interaction Enabled).
+Al Botón Deslizante se le da estilo de esquinas redondeadas.

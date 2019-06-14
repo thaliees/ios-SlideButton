@@ -27,29 +27,33 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKy-jH-Uhm">
                                 <rect key="frame" x="40" y="297.5" width="334" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIJ-Qm-4ri">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="lo1-w3-HzV"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omv-Ys-xj7">
+                                        <rect key="frame" x="148" y="9.5" width="38" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="3yx-jZ-JdZ" appends="YES" id="j2i-Xz-NDX"/>
-                                        </connections>
                                     </label>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ZFm-L1-yFn">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="1sH-9D-U8X"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3yx-jZ-JdZ" appends="YES" id="oQh-p3-1mr"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AnH-Qb-CVN"/>
-                                    <constraint firstItem="dIJ-Qm-4ri" firstAttribute="leading" secondItem="SKy-jH-Uhm" secondAttribute="leading" id="G5V-tP-Wmv"/>
+                                    <constraint firstItem="ZFm-L1-yFn" firstAttribute="top" secondItem="SKy-jH-Uhm" secondAttribute="top" id="KhZ-Vo-llF"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="RFj-1a-HQ0"/>
-                                    <constraint firstAttribute="bottom" secondItem="dIJ-Qm-4ri" secondAttribute="bottom" id="UrV-UB-Jjy"/>
-                                    <constraint firstItem="dIJ-Qm-4ri" firstAttribute="top" secondItem="SKy-jH-Uhm" secondAttribute="top" id="hbG-D7-2ob"/>
+                                    <constraint firstItem="omv-Ys-xj7" firstAttribute="centerY" secondItem="SKy-jH-Uhm" secondAttribute="centerY" id="c3J-Pq-4Cu"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZFm-L1-yFn" secondAttribute="bottom" id="g1c-Hg-ZmY"/>
+                                    <constraint firstItem="ZFm-L1-yFn" firstAttribute="leading" secondItem="SKy-jH-Uhm" secondAttribute="leading" id="mzX-Ux-fto"/>
+                                    <constraint firstItem="omv-Ys-xj7" firstAttribute="centerX" secondItem="SKy-jH-Uhm" secondAttribute="centerX" id="wj9-aU-c9s"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip7-nb-cNu">
@@ -76,7 +80,7 @@
                         <outlet property="areaView" destination="SKy-jH-Uhm" id="bd2-8R-c6N"/>
                         <outlet property="reset" destination="Ip7-nb-cNu" id="XQJ-go-hhX"/>
                         <outlet property="text" destination="5mV-Gc-Mr9" id="rSL-vQ-XK4"/>
-                        <outlet property="toSlider" destination="dIJ-Qm-4ri" id="4OK-Zg-PQX"/>
+                        <outlet property="toSlider" destination="ZFm-L1-yFn" id="KAT-rG-IOc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,6 +90,10 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow" width="128" height="128"/>
+    </resources>
 </document>
