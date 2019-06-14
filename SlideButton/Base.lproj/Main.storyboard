@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideButton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello world!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mV-Gc-Mr9">
+                                <rect key="frame" x="162" y="437.5" width="90.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKy-jH-Uhm">
+                                <rect key="frame" x="40" y="297.5" width="334" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIJ-Qm-4ri">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="lo1-w3-HzV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3yx-jZ-JdZ" appends="YES" id="j2i-Xz-NDX"/>
+                                        </connections>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="AnH-Qb-CVN"/>
+                                    <constraint firstItem="dIJ-Qm-4ri" firstAttribute="leading" secondItem="SKy-jH-Uhm" secondAttribute="leading" id="G5V-tP-Wmv"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="RFj-1a-HQ0"/>
+                                    <constraint firstAttribute="bottom" secondItem="dIJ-Qm-4ri" secondAttribute="bottom" id="UrV-UB-Jjy"/>
+                                    <constraint firstItem="dIJ-Qm-4ri" firstAttribute="top" secondItem="SKy-jH-Uhm" secondAttribute="top" id="hbG-D7-2ob"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SKy-jH-Uhm" secondAttribute="trailing" constant="40" id="5c5-ug-WiZ"/>
+                            <constraint firstItem="5mV-Gc-Mr9" firstAttribute="top" secondItem="SKy-jH-Uhm" secondAttribute="bottom" constant="100" id="CQS-oe-tyv"/>
+                            <constraint firstItem="5mV-Gc-Mr9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XLh-9I-cSe"/>
+                            <constraint firstItem="SKy-jH-Uhm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Xoz-GO-RMI"/>
+                            <constraint firstItem="5mV-Gc-Mr9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Z84-3k-wG7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="areaView" destination="SKy-jH-Uhm" id="bd2-8R-c6N"/>
+                        <outlet property="text" destination="5mV-Gc-Mr9" id="rSL-vQ-XK4"/>
+                        <outlet property="toSlider" destination="dIJ-Qm-4ri" id="4OK-Zg-PQX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="3yx-jZ-JdZ">
+                    <connections>
+                        <action selector="handleOnTouch:" destination="BYZ-38-t0r" id="Svx-3v-jyO"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>
